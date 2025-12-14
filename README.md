@@ -27,8 +27,24 @@ kiroctl은 AWS IAM Identity Center 기반의 Kiro 환경을 관리하는 Go 언�
    export AWS_SESSION_TOKEN=<세션 토큰>  # 임시 자격 증명 사용 시
    export AWS_DEFAULT_REGION=<리전> # us-east-1 또는 eu-central-1
    ```
+> [!WARNING]
+> **CloudShell**에서 kiroctl을 실행할 경우, codewhisperer:* 작업에 대한 권한이 없어서 **AccessDeniedException** 오류가 발생합니다.
 
 ```bash
+# Linux (amd64)
+curl -L -O https://github.com/iamhansko/kiroctl/releases/download/v0.0/kiroctl
+chmod +x ./kiroctl
+mkdir -p $HOME/bin && cp ./kiroctl $HOME/bin/kiroctl && export PATH=$HOME/bin:$PATH
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+rm ./kiroctl
+
+kiroctl [command]
+
+
+# Windows (amd64)
+curl -L -O https://github.com/iamhansko/kiroctl/releases/download/v0.0/kiroctl.exe
+set PATH=%PATH%;%CD%
+
 kiroctl [command]
 ```
 
