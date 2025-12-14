@@ -34,11 +34,8 @@ kiroctl은 AWS IAM Identity Center 기반의 Kiro 환경을 관리하는 Go 언�
 # macOS (arm64)
 curl -L -o kiroctl https://github.com/iamhansko/kiroctl/releases/download/v0.0/kiroctl-macos
 chmod +x ./kiroctl
-mkdir -p $HOME/bin && cp ./kiroctl $HOME/bin/kiroctl && export PATH=$HOME/bin:$PATH
-echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
-rm ./kiroctl
 
-kiroctl [command]
+./kiroctl [command]
 
 
 # Linux (amd64)
